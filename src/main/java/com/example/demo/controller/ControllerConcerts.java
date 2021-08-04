@@ -20,6 +20,7 @@ public class ControllerConcerts {
   @GetMapping("/concerts")
   public ResponseEntity<?> getAllConcerts() {
     LOG.info("getAllConcert - method entered");
+    // serviceConcerts.addConcert(new Concert());
     return ResponseEntity.ok(serviceConcerts.getAllConcerts());
   }
 

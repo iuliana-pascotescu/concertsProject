@@ -3,6 +3,7 @@ package com.example.demo.service;
 import com.example.demo.domain.Concert;
 import com.example.demo.repository.RepositoryConcerts;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -21,4 +22,7 @@ public class ServiceConcerts {
   public void deleteConcertById(int id) {
     this.repositoryConcerts.deleteById(id);
   }
+
+  @Transactional
+  public void addConcert(Concert concert) {this.repositoryConcerts.save(concert);}
 }
